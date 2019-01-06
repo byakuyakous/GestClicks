@@ -203,28 +203,29 @@ CREATE TABLE IF NOT EXISTS `operer` (
 DROP TABLE IF EXISTS `patient`;
 CREATE TABLE IF NOT EXISTS `patient` (
   `ID_PATIENT` varchar(20) NOT NULL,
-  `ID_RECEPTIONISTE` varchar(20) NOT NULL,
+  `ID_RECEPTIONNISTE` varchar(20) NOT NULL,
   `ID_DENTISTE` varchar(20) NOT NULL,
   `NOM` varchar(20) DEFAULT NULL,
   `PRENOM` varchar(20) DEFAULT NULL,
   `CIN` varchar(20) DEFAULT NULL,
   `SEXE` varchar(10) DEFAULT NULL,
   `DATE_NAISSANCE` date DEFAULT NULL,
+  `DATE_CREATION` date DEFAULT NULL,
   `TELEPHONE` varchar(20) DEFAULT NULL,
   `EMAIL` varchar(25) DEFAULT NULL,
   `TYPE_DE_SANG` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`ID_PATIENT`),
-  KEY `CREER_DOSSIER_FK` (`ID_RECEPTIONISTE`)
+  KEY `CREER_DOSSIER_FK` (`ID_RECEPTIONNISTE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `receptioniste`
+-- Structure de la table `receptionniste`
 --
 
-DROP TABLE IF EXISTS `receptioniste`;
-CREATE TABLE IF NOT EXISTS `receptioniste` (
+DROP TABLE IF EXISTS `receptionniste`;
+CREATE TABLE IF NOT EXISTS `receptionniste` (
   `ID_EMPLOYE` varchar(20) NOT NULL,
   `LOGIN` varchar(20) NOT NULL,
   `CIN` varchar(20) DEFAULT NULL,
@@ -246,11 +247,11 @@ CREATE TABLE IF NOT EXISTS `receptioniste` (
 
 DROP TABLE IF EXISTS `rendez_vous`;
 CREATE TABLE IF NOT EXISTS `rendez_vous` (
-  `IDRECEPTIONISTE` varchar(20) NOT NULL,
+  `IDRECEPTIONNISTE` varchar(20) NOT NULL,
   `ID_PATIENT` varchar(20) NOT NULL,
   `DATERV` date DEFAULT NULL,
   `HEURE` time DEFAULT NULL,
-  PRIMARY KEY (`IDRECEPTIONISTE`,`ID_PATIENT`),
+  PRIMARY KEY (`IDRECEPTIONNISTE`,`ID_PATIENT`),
   KEY `FK_RENDEZ_VOUS3` (`ID_PATIENT`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -262,7 +263,8 @@ CREATE TABLE IF NOT EXISTS `rendez_vous` (
 -- Contraintes pour la table `administrateur`
 --
 ALTER TABLE `administrateur`
-  ADD CONSTRAINT `FK_HERITAGE_3` FOREIGN KEY (`ID_EMPLOYE`) REFERENCES `employe` (`ID_EMPLOYE`);
+  ADD CONSTRAINT `FK_HERITAGE_3` FOREIGN KEY (`ID_EMPLOYE`) REFERENCES `employe` (`ID_EMPLOYE`),
+  ADD CONSTRAINT `FK_AUTHENTIFICATION_A` FOREIGN KEY (`LOGIN`) REFERENCES `compte` (`LOGIN`);
 
 --
 -- Contraintes pour la table `avoir_allergie`
@@ -288,7 +290,8 @@ ALTER TABLE `compte`
 -- Contraintes pour la table `dentiste`
 --
 ALTER TABLE `dentiste`
-  ADD CONSTRAINT `FK_HERITAGE_2` FOREIGN KEY (`ID_EMPLOYE`) REFERENCES `employe` (`ID_EMPLOYE`);
+  ADD CONSTRAINT `FK_HERITAGE_2` FOREIGN KEY (`ID_EMPLOYE`) REFERENCES `employe` (`ID_EMPLOYE`),
+  ADD CONSTRAINT `FK_AUTHENTIFICATION_D` FOREIGN KEY (`LOGIN`) REFERENCES `compte` (`LOGIN`);
 
 --
 -- Contraintes pour la table `donner_ord`
@@ -314,19 +317,21 @@ ALTER TABLE `operer`
 -- Contraintes pour la table `patient`
 --
 ALTER TABLE `patient`
-  ADD CONSTRAINT `FK_CREER_DOSSIER` FOREIGN KEY (`ID_RECEPTIONISTE`) REFERENCES `receptioniste` (`ID_EMPLOYE`);
+  ADD CONSTRAINT `FK_CREER_DOSSIER` FOREIGN KEY (`ID_RECEPTIONNISTE`) REFERENCES `receptionniste` (`ID_EMPLOYE`),
+  ADD CONSTRAINT `FK_DENTISTE` FOREIGN KEY (`ID_DENTISTE`) REFERENCES `dentiste` (`ID_EMPLOYE`);
 
 --
--- Contraintes pour la table `receptioniste`
+-- Contraintes pour la table `receptionniste`
 --
-ALTER TABLE `receptioniste`
-  ADD CONSTRAINT `FK_HERITAGE_1` FOREIGN KEY (`ID_EMPLOYE`) REFERENCES `employe` (`ID_EMPLOYE`);
+ALTER TABLE `receptionniste`
+  ADD CONSTRAINT `FK_HERITAGE_1` FOREIGN KEY (`ID_EMPLOYE`) REFERENCES `employe` (`ID_EMPLOYE`),
+  ADD CONSTRAINT `FK_AUTHENTIFICATION_R` FOREIGN KEY (`LOGIN`) REFERENCES `compte` (`LOGIN`);
 
 --
 -- Contraintes pour la table `rendez_vous`
 --
 ALTER TABLE `rendez_vous`
-  ADD CONSTRAINT `FK_RENDEZ_VOUS2` FOREIGN KEY (`IDRECEPTIONISTE`) REFERENCES `receptioniste` (`ID_EMPLOYE`),
+  ADD CONSTRAINT `FK_RENDEZ_VOUS2` FOREIGN KEY (`IDRECEPTIONNISTE`) REFERENCES `receptionniste` (`ID_EMPLOYE`),
   ADD CONSTRAINT `FK_RENDEZ_VOUS3` FOREIGN KEY (`ID_PATIENT`) REFERENCES `patient` (`ID_PATIENT`);
 COMMIT;
 
