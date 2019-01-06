@@ -12,14 +12,14 @@ import javax.swing.JFrame;
  *
  * @author Abdelkrim
  */
-public class Dentiste extends javax.swing.JFrame {
+public class DentisteAccueil extends javax.swing.JFrame {
 
     /**
      * Creates new form Dentiste
      */
     int xMouse;
     int yMouse;
-    public Dentiste() {
+    public DentisteAccueil() {
         initComponents();
          ColorPanel1.setBackground(new Color(43,149,113));
         this.setLocationRelativeTo(null);
@@ -610,20 +610,21 @@ public class Dentiste extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dentiste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DentisteAccueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dentiste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DentisteAccueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dentiste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DentisteAccueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dentiste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DentisteAccueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dentiste().setVisible(true);
+                new DentisteAccueil().setVisible(true);
             }
         });
     }
