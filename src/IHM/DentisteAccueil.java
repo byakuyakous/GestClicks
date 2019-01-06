@@ -214,7 +214,7 @@ public class DentisteAccueil extends javax.swing.JFrame {
         TextLabel.setForeground(new java.awt.Color(255, 255, 255));
         TextLabel.setText("    Operations");
 
-        ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/tooth.png"))); // NOI18N
+        ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/operation.png"))); // NOI18N
 
         ColorPanel.setBackground(new java.awt.Color(58, 67, 94));
 

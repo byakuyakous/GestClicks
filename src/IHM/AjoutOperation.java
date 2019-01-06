@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package IHM;
+import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -11,11 +13,14 @@ package IHM;
  */
 public class AjoutOperation extends javax.swing.JFrame {
 
+    int xMouse;
+    int yMouse;
     /**
      * Creates new form AjoutOperation
      */
     public AjoutOperation() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,32 +32,197 @@ public class AjoutOperation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        TopPanel = new javax.swing.JPanel();
+        Exitpanel = new javax.swing.JPanel();
+        ExitPanel = new javax.swing.JLabel();
+        Reducepanel = new javax.swing.JPanel();
+        ExitPanel1 = new javax.swing.JLabel();
+        NpLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("dqsqsqscqscqsq");
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+        TopPanel.setBackground(new java.awt.Color(51, 129, 162));
+        TopPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TopPanelMouseDragged(evt);
+            }
+        });
+        TopPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TopPanelMousePressed(evt);
+            }
+        });
+
+        Exitpanel.setBackground(new java.awt.Color(51, 129, 162));
+        Exitpanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitpanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ExitpanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ExitpanelMouseExited(evt);
+            }
+        });
+
+        ExitPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/exit.png"))); // NOI18N
+        ExitPanel.setText("   ");
+
+        javax.swing.GroupLayout ExitpanelLayout = new javax.swing.GroupLayout(Exitpanel);
+        Exitpanel.setLayout(ExitpanelLayout);
+        ExitpanelLayout.setHorizontalGroup(
+            ExitpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitpanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(ExitPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+        ExitpanelLayout.setVerticalGroup(
+            ExitpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExitpanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ExitPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11))
         );
+
+        Reducepanel.setBackground(new java.awt.Color(51, 129, 162));
+        Reducepanel.setPreferredSize(new java.awt.Dimension(44, 45));
+        Reducepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReducepanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ReducepanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ReducepanelMouseExited(evt);
+            }
+        });
+
+        ExitPanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/reduce.png"))); // NOI18N
+        ExitPanel1.setText("   ");
+
+        javax.swing.GroupLayout ReducepanelLayout = new javax.swing.GroupLayout(Reducepanel);
+        Reducepanel.setLayout(ReducepanelLayout);
+        ReducepanelLayout.setHorizontalGroup(
+            ReducepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReducepanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ExitPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11))
+        );
+        ReducepanelLayout.setVerticalGroup(
+            ReducepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReducepanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(ExitPanel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        NpLabel1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        NpLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        NpLabel1.setText("Ajouter operation");
+
+        javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
+        TopPanel.setLayout(TopPanelLayout);
+        TopPanelLayout.setHorizontalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TopPanelLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(NpLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Reducepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Exitpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        TopPanelLayout.setVerticalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Reducepanel, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Exitpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(NpLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 402, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ExitpanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitpanelMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_ExitpanelMouseClicked
+
+    private void ExitpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitpanelMouseEntered
+        // TODO add your handling code here:
+        Exitpanel.setBackground(Color.red);
+    }//GEN-LAST:event_ExitpanelMouseEntered
+
+    private void ExitpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitpanelMouseExited
+        // TODO add your handling code here:
+        Exitpanel.setBackground(new Color(51,129,162));
+    }//GEN-LAST:event_ExitpanelMouseExited
+
+    private void ReducepanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReducepanelMouseClicked
+        this.setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_ReducepanelMouseClicked
+
+    private void ReducepanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReducepanelMouseEntered
+        // TODO add your handling code here:
+        Reducepanel.setBackground(new Color(58,67,94));
+    }//GEN-LAST:event_ReducepanelMouseEntered
+
+    private void ReducepanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReducepanelMouseExited
+        // TODO add your handling code here:
+        Reducepanel.setBackground(new Color(51,129,162));
+    }//GEN-LAST:event_ReducepanelMouseExited
+
+    private void TopPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopPanelMouseDragged
+        // TODO add your handling code here:
+        int x=evt.getXOnScreen();
+        int y=evt.getYOnScreen();
+        this.setLocation(x-xMouse,y-yMouse);
+    }//GEN-LAST:event_TopPanelMouseDragged
+
+    private void TopPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopPanelMousePressed
+        xMouse=evt.getX();
+        yMouse=evt.getY();
+    }//GEN-LAST:event_TopPanelMousePressed
 
     /**
      * @param args the command line arguments
@@ -91,6 +261,13 @@ public class AjoutOperation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel ExitPanel;
+    private javax.swing.JLabel ExitPanel1;
+    private javax.swing.JPanel Exitpanel;
+    private javax.swing.JLabel NpLabel1;
+    private javax.swing.JPanel Reducepanel;
+    private javax.swing.JPanel TopPanel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
