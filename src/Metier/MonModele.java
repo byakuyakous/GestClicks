@@ -21,7 +21,7 @@ import sun.util.logging.PlatformLogger;
 public class MonModele extends AbstractTableModel {
   private int NbLignes=0;
   private int NbCol=0;
-  private String[] Titres;
+  //private String[] Titres;
   private ArrayList<Vector<String>> MesLignes = new ArrayList<Vector<String>>();
   
   public MonModele(ResultSet Rs)
@@ -29,10 +29,10 @@ public class MonModele extends AbstractTableModel {
    try{
        ResultSetMetaData rsmd = Rs.getMetaData();
        NbCol = rsmd.getColumnCount();
-       Titres = new String[NbCol];
+      // Titres = new String[NbCol];
        for (int i=0;i<NbCol;i++)
        {
-           Titres[i]=rsmd.getColumnName(i+1);
+          // Titres[i]=rsmd.getColumnName(i+1);
            Vector<String> Lignes;
            while(Rs.next())
            {
@@ -67,9 +67,9 @@ public class MonModele extends AbstractTableModel {
        return MesLignes.get(rowIndex).get(columnIndex);
     }
 
-    @Override
-    public String getColumnName(int column) {
+    //@Override
+   /* public String getColumnName(int column) {
          return Titres[column];
-    }
+    }*/
   
 }

@@ -52,7 +52,7 @@ public class daoPatient {
             Rs=st.executeQuery("select * from patient where id_patients="+idP);
             
         } catch (SQLException ex) {
-            Logger.getLogger(daoPatient.class.getName()).log(Level.SEVERE, null, ex);
+              System.err.println(ex.getMessage());
         }
         return Rs;
     }

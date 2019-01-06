@@ -6,6 +6,8 @@
 package IHM;
 
 import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 
 /**
@@ -19,10 +21,17 @@ public class ReceptionisteAccueil extends javax.swing.JFrame {
      */
     int xMouse;
     int yMouse;
+    RPatient panel1;
     public ReceptionisteAccueil() {
         initComponents();
         ColorPanel1.setBackground(new Color(43,149,113));
         this.setLocationRelativeTo(null);
+        panel1=new RPatient();
+        DynamicPanel.setLayout(new GridBagLayout());
+        GridBagConstraints c=new GridBagConstraints();
+        c.gridx=c.gridy=0;
+        DynamicPanel.add(panel1,c);
+        panel1.setVisible(false);
     }
 
     /**
@@ -158,7 +167,7 @@ public class ReceptionisteAccueil extends javax.swing.JFrame {
 
         NpLabel1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         NpLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        NpLabel1.setText("Récéptioniste: ");
+        NpLabel1.setText("Réceptionniste: ");
 
         NpLabel2.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         NpLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,7 +182,7 @@ public class ReceptionisteAccueil extends javax.swing.JFrame {
                 .addComponent(NpLabel1)
                 .addGap(0, 0, 0)
                 .addComponent(NpLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 514, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 503, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -194,6 +203,9 @@ public class ReceptionisteAccueil extends javax.swing.JFrame {
 
         GestPanel.setBackground(new java.awt.Color(58, 67, 94));
         GestPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GestPanelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 GestPanelMouseEntered(evt);
             }
@@ -604,8 +616,13 @@ public class ReceptionisteAccueil extends javax.swing.JFrame {
         // TODO add your handling code here:
         int x=evt.getXOnScreen();
         int y=evt.getYOnScreen();
-        this.setLocation(x-xMouse-400,y-yMouse);
+        this.setLocation(x-xMouse,y-yMouse);
     }//GEN-LAST:event_TopPanelMouseDragged
+
+    private void GestPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GestPanelMouseClicked
+        // TDO add your handling code here:
+        panel1.setVisible(true);
+    }//GEN-LAST:event_GestPanelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -618,7 +635,7 @@ public class ReceptionisteAccueil extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
