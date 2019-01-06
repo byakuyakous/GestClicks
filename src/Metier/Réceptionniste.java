@@ -99,4 +99,8 @@ public class Réceptionniste extends Employé {
         this.date_embauche = date_embauche;
     }
     
+    public void AjouterPatient(Patient P)
+    {
+        
+    }
 }
