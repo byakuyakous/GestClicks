@@ -196,9 +196,10 @@ public class AdministrateurAccueil extends javax.swing.JFrame {
         TextLabel.setBackground(new java.awt.Color(255, 255, 255));
         TextLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         TextLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TextLabel.setText("    Patients");
+        TextLabel.setText(" Nouveau Employé");
 
-        ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/patient.png"))); // NOI18N
+        ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/new user.png"))); // NOI18N
+        ImgLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         ColorPanel.setBackground(new java.awt.Color(58, 67, 94));
 
@@ -258,9 +259,11 @@ public class AdministrateurAccueil extends javax.swing.JFrame {
         TextLabel1.setBackground(new java.awt.Color(255, 255, 255));
         TextLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         TextLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        TextLabel1.setText("     Accueil");
+        TextLabel1.setText("   Accueil");
+        TextLabel1.setDoubleBuffered(true);
 
         ImgLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Accueil.png"))); // NOI18N
+        ImgLabel1.setDoubleBuffered(true);
 
         ColorPanel1.setBackground(new java.awt.Color(58, 67, 94));
 
@@ -314,9 +317,9 @@ public class AdministrateurAccueil extends javax.swing.JFrame {
         TextLabel2.setBackground(new java.awt.Color(255, 255, 255));
         TextLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         TextLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        TextLabel2.setText("     Rendez-vous");
+        TextLabel2.setText("  Liste Employées");
 
-        ImgLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/RV2.png"))); // NOI18N
+        ImgLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/users.png"))); // NOI18N
 
         ColorPanel2.setBackground(new java.awt.Color(58, 67, 94));
 
@@ -370,7 +373,7 @@ public class AdministrateurAccueil extends javax.swing.JFrame {
         TextLabel3.setBackground(new java.awt.Color(255, 255, 255));
         TextLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         TextLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        TextLabel3.setText("     Déconnexion");
+        TextLabel3.setText("  Déconnexion");
 
         ImgLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Deconnexion.png"))); // NOI18N
 
@@ -434,15 +437,15 @@ public class AdministrateurAccueil extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(NpLabel)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(GestPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(GestPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(19, 19, 19)
                 .addComponent(GestPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(GestPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         DynamicPanel.setBackground(new java.awt.Color(255, 255, 255));
