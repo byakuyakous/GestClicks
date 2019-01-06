@@ -20,14 +20,14 @@ public class Connexion {
     {Connection Conn=null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/DB","root","");
+            Conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/GestclickDB","root","");
                     
         } 
         catch (ClassNotFoundException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println(ex.getMessage());
         } 
         catch (SQLException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+           System.err.println(ex.getMessage());
         }
         return Conn;
     }
