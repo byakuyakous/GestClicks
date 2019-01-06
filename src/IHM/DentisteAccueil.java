@@ -6,6 +6,8 @@
 package IHM;
 
 import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 
 /**
@@ -13,16 +15,27 @@ import javax.swing.JFrame;
  * @author Abdelkrim
  */
 public class DentisteAccueil extends javax.swing.JFrame {
-
+    
+    int xMouse;
+    int yMouse;
+    GridBagLayout layout = new GridBagLayout();
+    DOperation Doperation = new DOperation();
+    DDefaut Ddefault = new DDefaut();
     /**
      * Creates new form Dentiste
      */
-    int xMouse;
-    int yMouse;
+  
     public DentisteAccueil() {
         initComponents();
-         ColorPanel1.setBackground(new Color(43,149,113));
+        ColorPanel1.setBackground(new Color(43,149,113));
         this.setLocationRelativeTo(null);
+        DynamicPanel.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx=0;
+        c.gridy=0;
+        DynamicPanel.add(Ddefault, c);
+        DynamicPanel.add(Doperation, c);
+        Ddefault.setVisible(true);
     }
 
     /**
@@ -63,6 +76,7 @@ public class DentisteAccueil extends javax.swing.JFrame {
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         TopPanel.setBackground(new java.awt.Color(51, 129, 162));
         TopPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -181,6 +195,9 @@ public class DentisteAccueil extends javax.swing.JFrame {
 
         GestPanel.setBackground(new java.awt.Color(58, 67, 94));
         GestPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GestPanelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 GestPanelMouseEntered(evt);
             }
@@ -195,9 +212,9 @@ public class DentisteAccueil extends javax.swing.JFrame {
         TextLabel.setBackground(new java.awt.Color(255, 255, 255));
         TextLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         TextLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TextLabel.setText("    Patients");
+        TextLabel.setText("    Operations");
 
-        ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/patient.png"))); // NOI18N
+        ImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/tooth.png"))); // NOI18N
 
         ColorPanel.setBackground(new java.awt.Color(58, 67, 94));
 
@@ -243,6 +260,9 @@ public class DentisteAccueil extends javax.swing.JFrame {
 
         GestPanel1.setBackground(new java.awt.Color(58, 67, 94));
         GestPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GestPanel1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 GestPanel1MouseEntered(evt);
             }
@@ -593,6 +613,16 @@ public class DentisteAccueil extends javax.swing.JFrame {
         ColorPanel.setBackground(new Color(58,67,94));
     }//GEN-LAST:event_GestPanel3MousePressed
 
+    private void GestPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GestPanelMouseClicked
+        Ddefault.setVisible(false);
+        Doperation.setVisible(true);
+    }//GEN-LAST:event_GestPanelMouseClicked
+
+    private void GestPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GestPanel1MouseClicked
+        Ddefault.setVisible(true);
+        Doperation.setVisible(false);
+    }//GEN-LAST:event_GestPanel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -604,7 +634,7 @@ public class DentisteAccueil extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -618,6 +648,12 @@ public class DentisteAccueil extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DentisteAccueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
