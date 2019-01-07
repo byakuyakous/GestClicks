@@ -20,8 +20,9 @@ public class Connexion {
     {Connection Conn=null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Driver ok ! ");
             Conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/GestclickDB","root","");
-                    
+            System.out.println("Connexion etablie ! ");       
         } 
         catch (ClassNotFoundException ex) {
             System.err.println(ex.getMessage());
