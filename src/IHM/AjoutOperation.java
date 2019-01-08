@@ -1,8 +1,4 @@
-﻿/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package IHM;
 import Dao.daoOperation;
 import java.awt.Color;
@@ -267,7 +263,7 @@ public class AjoutOperation extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(OPIDpatient)
                     .addComponent(OPTypeop)
-                    .addComponent(OPDateop, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(OPDateop, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(32, 32, 32))
         );
@@ -389,11 +385,9 @@ public class AjoutOperation extends javax.swing.JFrame {
 
     private void ValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ValiderMouseClicked
 
-       String Iddentiste = OPIDpatient.getText().toString();
-       String typeoperation = OPTypeop.getText().toString();
+      
        //String D =  OPDateop.getCalendar().getTime().toString(); there's a problem here i will solve it later 
        // dial how to get la date men jchooser
-       String remarques = OPRemarques.getText().toString();
   
        //Operation.Ajouter("1",Iddentiste, typeoperation,,remarques);
        java.sql.Date D = new java.sql.Date(Calendar.getInstance().getTime().getTime());
