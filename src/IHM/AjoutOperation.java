@@ -50,7 +50,7 @@ public class AjoutOperation extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         OPIDpatient = new javax.swing.JTextField();
         OPTypeop = new javax.swing.JTextField();
-        OPDateop = new org.netbeans.modules.form.InvalidComponent();
+        OPDateop = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         OPRemarques = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
@@ -185,6 +185,8 @@ public class AjoutOperation extends javax.swing.JFrame {
                 OPTypeopActionPerformed(evt);
             }
         });
+
+        OPDateop.setDateFormatString("YYYY-MM-DD");
 
         OPRemarques.setColumns(20);
         OPRemarques.setRows(5);
@@ -386,7 +388,7 @@ public class AjoutOperation extends javax.swing.JFrame {
     }//GEN-LAST:event_ValiderMouseEntered
 
     private void ValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ValiderMouseClicked
-<<<<<<< HEAD
+
        String Iddentiste = OPIDpatient.getText().toString();
        String typeoperation = OPTypeop.getText().toString();
        //String D =  OPDateop.getCalendar().getTime().toString(); there's a problem here i will solve it later 
@@ -394,13 +396,11 @@ public class AjoutOperation extends javax.swing.JFrame {
        String remarques = OPRemarques.getText().toString();
   
        //Operation.Ajouter("1",Iddentiste, typeoperation,,remarques);
-=======
        java.sql.Date D = new java.sql.Date(Calendar.getInstance().getTime().getTime());
        String Iddentiste = OPIDpatient.getText().toString();
        String typeoperation = OPTypeop.getText().toString();
        String remarques = OPRemarques.getText().toString();
        Operation.Ajouter("4",Iddentiste, typeoperation,D,remarques);
->>>>>>> fa792ce039d9c77a44ab1d082e4c3e0efccffc52
     }//GEN-LAST:event_ValiderMouseClicked
 
     /**
@@ -444,7 +444,7 @@ public class AjoutOperation extends javax.swing.JFrame {
     private javax.swing.JLabel ExitPanel1;
     private javax.swing.JPanel Exitpanel;
     private javax.swing.JLabel NpLabel1;
-    private org.netbeans.modules.form.InvalidComponent OPDateop;
+    private com.toedter.calendar.JDateChooser OPDateop;
     private javax.swing.JTextField OPIDpatient;
     private javax.swing.JTextArea OPRemarques;
     private javax.swing.JTextField OPTypeop;
