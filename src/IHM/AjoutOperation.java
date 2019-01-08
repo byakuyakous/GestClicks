@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +7,8 @@ package IHM;
 import Dao.daoOperation;
 import java.awt.Color;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.swing.JFrame;
 
 /**
@@ -48,7 +50,7 @@ public class AjoutOperation extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         OPIDpatient = new javax.swing.JTextField();
         OPTypeop = new javax.swing.JTextField();
-        OPDateop = new com.toedter.calendar.JDateChooser();
+        OPDateop = new org.netbeans.modules.form.InvalidComponent();
         jScrollPane1 = new javax.swing.JScrollPane();
         OPRemarques = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
@@ -152,7 +154,7 @@ public class AjoutOperation extends javax.swing.JFrame {
             .addGroup(TopPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(NpLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(Reducepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(Exitpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -183,8 +185,6 @@ public class AjoutOperation extends javax.swing.JFrame {
                 OPTypeopActionPerformed(evt);
             }
         });
-
-        OPDateop.setDateFormatString("YYYY-MM-DD");
 
         OPRemarques.setColumns(20);
         OPRemarques.setRows(5);
@@ -259,25 +259,20 @@ public class AjoutOperation extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(36, 36, 36)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Valider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(OPIDpatient)
                     .addComponent(OPTypeop)
                     .addComponent(OPDateop, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(32, 32, 32))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(Valider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(121, 121, 121)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(OPIDpatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -391,6 +386,7 @@ public class AjoutOperation extends javax.swing.JFrame {
     }//GEN-LAST:event_ValiderMouseEntered
 
     private void ValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ValiderMouseClicked
+<<<<<<< HEAD
        String Iddentiste = OPIDpatient.getText().toString();
        String typeoperation = OPTypeop.getText().toString();
        //String D =  OPDateop.getCalendar().getTime().toString(); there's a problem here i will solve it later 
@@ -398,6 +394,13 @@ public class AjoutOperation extends javax.swing.JFrame {
        String remarques = OPRemarques.getText().toString();
   
        //Operation.Ajouter("1",Iddentiste, typeoperation,,remarques);
+=======
+       java.sql.Date D = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+       String Iddentiste = OPIDpatient.getText().toString();
+       String typeoperation = OPTypeop.getText().toString();
+       String remarques = OPRemarques.getText().toString();
+       Operation.Ajouter("4",Iddentiste, typeoperation,D,remarques);
+>>>>>>> fa792ce039d9c77a44ab1d082e4c3e0efccffc52
     }//GEN-LAST:event_ValiderMouseClicked
 
     /**
@@ -441,7 +444,7 @@ public class AjoutOperation extends javax.swing.JFrame {
     private javax.swing.JLabel ExitPanel1;
     private javax.swing.JPanel Exitpanel;
     private javax.swing.JLabel NpLabel1;
-    private com.toedter.calendar.JDateChooser OPDateop;
+    private org.netbeans.modules.form.InvalidComponent OPDateop;
     private javax.swing.JTextField OPIDpatient;
     private javax.swing.JTextArea OPRemarques;
     private javax.swing.JTextField OPTypeop;

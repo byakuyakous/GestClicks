@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/D:/projects/GestClicks/src/IHM/DentisteAccueil.java</file>
             <file>file:/D:/projects/GestClicks/src/IHM/ReceptionisteAccueil.java</file>
             <file>file:/D:/projects/GestClicks/src/gestclicks/GestClicks.java</file>
@@ -21,13 +22,18 @@
             <file>file:/D:/projects/GestClicks/src/Dao/DaoDentiste.java</file>
             <file>file:/D:/projects/GestClicks/src/Metier/Employé.java</file>
 =======
+=======
+>>>>>>> fa792ce039d9c77a44ab1d082e4c3e0efccffc52
             <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/DOperation.java</file>
             <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/DDefaut.java</file>
             <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/AjouterPatient.java</file>
             <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/DentisteAccueil.java</file>
             <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/ReceptionisteAccueil.java</file>
             <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/AjoutOperation.java</file>
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> fa792ce039d9c77a44ab1d082e4c3e0efccffc52
         </group>
     </open-files>
 </project-private>
