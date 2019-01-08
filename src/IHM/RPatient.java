@@ -5,7 +5,10 @@
  */
 package IHM;
 
+import Dao.daoPatient;
+import Metier.PatientModele;
 import java.awt.Color;
+import java.sql.ResultSet;
 
 /**
  *
@@ -18,8 +21,15 @@ public class RPatient extends javax.swing.JPanel {
      */
     public RPatient() {
         initComponents();
+        AfficherTPatients();
+        
     }
 
+    public void AfficherTPatients()
+    {
+        ResultSet res=new daoPatient().ReadAll();
+        PatientTable.setModel(new PatientModele(res));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,6 +65,7 @@ public class RPatient extends javax.swing.JPanel {
             }
         ));
         PatientTable.setGridColor(new java.awt.Color(255, 255, 255));
+        PatientTable.setSelectionBackground(new java.awt.Color(0, 153, 153));
         jScrollPane1.setViewportView(PatientTable);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,7 +167,10 @@ public class RPatient extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane1)
+                .addGap(5, 5, 5))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

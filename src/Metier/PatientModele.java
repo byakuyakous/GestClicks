@@ -5,7 +5,6 @@
  */
 package Metier;
 
-import com.sun.istack.internal.logging.Logger;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -18,21 +17,26 @@ import sun.util.logging.PlatformLogger;
  *
  * @author hatim
  */
-public class MonModele extends AbstractTableModel {
+public class PatientModele extends AbstractTableModel {
   private int NbLignes=0;
   private int NbCol=0;
-  //private String[] Titres;
+  private String[] Titres;
   private ArrayList<Vector<String>> MesLignes = new ArrayList<Vector<String>>();
   
-  public MonModele(ResultSet Rs)
+  public PatientModele(ResultSet Rs)
   {
    try{
        ResultSetMetaData rsmd = Rs.getMetaData();
        NbCol = rsmd.getColumnCount();
-      // Titres = new String[NbCol];
+      Titres = new String[NbCol];
+      Titres[0]="Id_patient";
+      Titres[3]="Téléphone";
+      Titres[1]="Nom";
+      Titres[2]="Prenom";
+      Titres[4]="Id_dentiste";
        for (int i=0;i<NbCol;i++)
        {
-          // Titres[i]=rsmd.getColumnName(i+1);
+          
            Vector<String> Lignes;
            while(Rs.next())
            {
@@ -68,8 +72,8 @@ public class MonModele extends AbstractTableModel {
     }
 
     //@Override
-   /* public String getColumnName(int column) {
+   public String getColumnName(int column) {
          return Titres[column];
-    }*/
+    }
   
 }
