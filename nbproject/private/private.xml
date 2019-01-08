@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/projects/GestClicks/src/IHM/DentisteAccueil.java</file>
             <file>file:/D:/projects/GestClicks/src/IHM/ReceptionisteAccueil.java</file>
             <file>file:/D:/projects/GestClicks/src/gestclicks/GestClicks.java</file>
@@ -19,6 +20,14 @@
             <file>file:/D:/projects/GestClicks/src/Metier/Patient.java</file>
             <file>file:/D:/projects/GestClicks/src/Dao/DaoDentiste.java</file>
             <file>file:/D:/projects/GestClicks/src/Metier/Employé.java</file>
+=======
+            <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/DOperation.java</file>
+            <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/DDefaut.java</file>
+            <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/AjouterPatient.java</file>
+            <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/DentisteAccueil.java</file>
+            <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/ReceptionisteAccueil.java</file>
+            <file>file:/C:/Users/hatim/OneDrive/S1/JAVA/TDs/projet%202018/GestClicks/src/IHM/AjoutOperation.java</file>
+>>>>>>> origin/master
         </group>
     </open-files>
 </project-private>

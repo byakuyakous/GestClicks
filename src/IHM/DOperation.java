@@ -99,7 +99,7 @@ public class DOperation extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/search.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/lp.png"))); // NOI18N
 
         Rechercher.setForeground(new java.awt.Color(204, 204, 204));
         Rechercher.setText(" Recherche...");

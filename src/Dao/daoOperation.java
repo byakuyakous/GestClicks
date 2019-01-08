@@ -28,7 +28,7 @@ public class daoOperation {
     public void Ajouter(String dentiste, String patient,String type,Date date,String remarque) 
     {
             try{  
-        PreparedStatement Pst = Con.prepareStatement("insert into operation values(?,?,?,?,?)");
+        PreparedStatement Pst = Con.prepareStatement("insert into operer values(?,?,?,?,?)");
         Pst.setString(1, dentiste);
         Pst.setString(2, patient);
         Pst.setString(3, type);
@@ -48,7 +48,7 @@ public class daoOperation {
               { 
                 
                 St=Con.createStatement();
-                Resultat=St.executeQuery("select * from operation");
+                Resultat=St.executeQuery("select * from operer");
                 System.out.println("Affichage des operations : ");
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -61,7 +61,7 @@ public class daoOperation {
               { 
                 ResultSet Resultat;
                 St=Con.createStatement();
-                Resultat=St.executeQuery("select * from operation where id_employe="+id);
+                Resultat=St.executeQuery("select * from operer where id_employe="+id);
                 System.out.println("Affichage : ");
                 if(Resultat.next())
                 {
@@ -79,7 +79,7 @@ public class daoOperation {
         {
             try
             {
-              PreparedStatement Pst = Con.prepareStatement("delete from operation where id_dentiste=? and id_patient=?");
+              PreparedStatement Pst = Con.prepareStatement("delete from operer where id_dentiste=? and id_patient=?");
               Pst.setString(1,idd);
               Pst.setString(2,idp);
               Pst.executeUpdate();
