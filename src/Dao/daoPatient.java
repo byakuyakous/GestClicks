@@ -61,7 +61,7 @@ public class daoPatient {
         ResultSet Rs=null;
         try {
             Statement st=Con.createStatement();
-            Rs=st.executeQuery("select id_patient,nom,prenom,telephone,id_dentiste from patient ");
+            Rs=st.executeQuery("select id_patient,nom,prenom,telephone,id_dentiste from patient ")  ;
             
         } catch (SQLException ex) {
             Logger.getLogger(daoPatient.class.getName()).log(Level.SEVERE, null, ex);
